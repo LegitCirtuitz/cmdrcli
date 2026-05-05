@@ -2,24 +2,28 @@ name: ci
 on:
   push:
     branches:
-      - main  # This triggers the robot every time you push to main
+      - main
+
 permissions:
   contents: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
           python-version: 3.x
-        env:
-          MKDOCS_STRICT: false
-        - name: Install dependencies
+
+      - name: Install dependencies
         run: |
           pip install mkdocs-material
           pip install mkdocs-static-i18n
+
       - name: Deploy
         run: mkdocs gh-deploy --force
-      - run: pip install mkdocs-material 
-      - run: mkdocs gh-deploy --force
+        env:
+          MKDOCS_STRICT: false
