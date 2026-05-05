@@ -36,6 +36,9 @@ extra:
 
 plugins:
   - search
+  - blog:
+      post_readtime: true
+      post_excerpt: optional
   - i18n:
       default_language: en
       languages:
@@ -66,3 +69,7 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+
+nav:
+  - Guide:
+      - Introduction: guide/index.md
