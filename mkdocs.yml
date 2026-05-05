@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
-site_name: Commandr CLI
-site_url: https://github.com/LegitCirtuitz/cmdrcli
 site_name: cmdrcli
+site_url: https://LegitCirtuitz.github.io/cmdrcli/
+
 theme:
   name: material
   palette: 
@@ -24,6 +24,7 @@ theme:
     - navigation.tabs
     - search.suggest
     - search.highlight
+
 extra:
   social:
     - icon: fontawesome/brands/github
@@ -32,29 +33,30 @@ extra:
       link: https://discord.gg/EMM2v5BW4v
     - icon: fontawesome/brands/youtube
       link: https://youtube.com/@ItsCirtwitz
+
 plugins:
   - search
   - i18n:
       default_language: en
       languages:
-        en: 
+        - locale: en
           name: English
           build: true
-        zh: 
-          name: 简体中文 (Simplified Chinese)
+        - locale: zh
+          name: 简体中文
           build: true
-        zh-Hant: 
-          name: 繁體中文 (Traditional Chinese)
+        - locale: zh-Hant
+          name: 繁體中文
           build: true
-        ja: 
-          name: 日本語 (Japanese)
+        - locale: ja
+          name: 日本語
           build: true
-        ko: 
-          name: 한국어 (Korean)
+        - locale: ko
+          name: 한국어
           build: true
-        pt: 
-          name: Português (Portuguese)
+        - locale: pt
+          name: Português
           build: true
-        de: 
-          name: Deutsch (German)
+        - locale: de
+          name: Deutsch
           build: true
