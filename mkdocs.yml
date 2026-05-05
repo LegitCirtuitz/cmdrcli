@@ -1,0 +1,15 @@
+site_name: Commandr CLI
+site_url: https://github.com/LegitCirtuitz/cmdrcli
+theme:
+  name: material
+  palette: 
+    - scheme: default # Light mode
+      primary: indigo
+      accent: indigo
+    - scheme: slate   # Dark mode
+      primary: indigo
+      accent: indigo
+  features:
+    - navigation.tabs
+    - search.suggest
+    - search.highlight
