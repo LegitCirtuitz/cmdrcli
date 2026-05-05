@@ -1,5 +1,5 @@
 # yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
-site_name: cmdrcli
+site_name: Commandr CLI
 site_url: https://LegitCirtuitz.github.io/cmdrcli/
 
 theme:
