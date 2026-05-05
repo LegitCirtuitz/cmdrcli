@@ -72,4 +72,4 @@ markdown_extensions:
 
 nav:
   - Guide:
-      - Introduction: guide/index.md
+      - Introduction: main/index.md
