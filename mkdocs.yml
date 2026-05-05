@@ -1,15 +1,59 @@
 site_name: Commandr CLI
 site_url: https://github.com/LegitCirtuitz/cmdrcli
+site_name: cmdrcli
 theme:
   name: material
   palette: 
-    - scheme: default # Light mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: default
       primary: indigo
       accent: indigo
-    - scheme: slate   # Dark mode
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
       primary: indigo
       accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
   features:
+    - navigation.footer
     - navigation.tabs
     - search.suggest
     - search.highlight
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/LegitCirtuitz
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/EMM2v5BW4v
+    - icon: fontawesome/brands/youtube
+      link: https://youtube.com/@ItsCirtwitz
+plugins:
+  - search
+  - i18n:
+      default_language: en
+      languages:
+        en: 
+          name: English
+          build: true
+        zh: 
+          name: 简体中文 (Simplified Chinese)
+          build: true
+        zh-Hant: 
+          name: 繁體中文 (Traditional Chinese)
+          build: true
+        ja: 
+          name: 日本語 (Japanese)
+          build: true
+        ko: 
+          name: 한국어 (Korean)
+          build: true
+        pt: 
+          name: Português (Portuguese)
+          build: true
+        de: 
+          name: Deutsch (German)
+          build: true
