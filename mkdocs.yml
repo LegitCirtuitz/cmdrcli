@@ -5,7 +5,7 @@ site_url: https://LegitCirtuitz.github.io/cmdrcli/
 theme:
   name: material
   palette: 
-    - media: "(prefers-color-scheme: dark)"
+    - media: "(prefers-color-scheme: light)" # Fixed to light
       scheme: default
       primary: indigo
       accent: indigo
@@ -38,11 +38,10 @@ plugins:
   - search
   - i18n:
       default_language: en
-      default: true
-      build: true
       languages:
         - locale: en
           name: English
+          default: true
           build: true
         - locale: zh
           name: 简体中文
