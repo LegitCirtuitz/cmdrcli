@@ -10,14 +10,6 @@ categories:
 # Launching Commandr CLI Docs!
 
 I am happy to announce that today is the **OFFICIAL Release** for the Commandr CLI Documentation!
-categories:
-  - Update
-  - Release
----
-
-# Launching Commandr CLI Docs!
-
-I am happy to announce that today is the **OFFICIAL Release** for the Commandr CLI Documentation!
 
 ## What to expect
 
