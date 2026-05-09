@@ -27,6 +27,14 @@ theme:
     - search.highlight
 
 extra:
+  blog:
+    authors:
+      LegitCirtuitz:
+        name: LegitCirtuitz
+        description: Lead Developer of Commandr CLI
+        avatar: https://github.com/LegitCirtuitz.png
+        url: https://github.com/LegitCirtuitz
+  
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/LegitCirtuitz
@@ -40,7 +48,6 @@ plugins:
   - blog:
       post_readtime: true
       post_excerpt: optional
-      pathname: blog
 
 markdown_extensions:
   - admonition
