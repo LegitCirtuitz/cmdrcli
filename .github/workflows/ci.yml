@@ -22,6 +22,8 @@ jobs:
         run: |
           pip install mkdocs-material
           pip install mkdocs-static-i18n
+          pip install mkdocs-minify-plugin
+          pip install pymdown-extensions
 
       - name: Deploy
         run: mkdocs gh-deploy --force
