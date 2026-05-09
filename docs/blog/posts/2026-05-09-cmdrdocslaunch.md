@@ -1,7 +1,9 @@
 ---
 date: 2026-05-09
 authors:
-  - LegitCirtuitz
+  - name: LegitCirtuitz
+    avatar: https://github.com/LegitCirtuitz.png
+    url: https://github.com/LegitCirtuitz
 categories:
   - Update
   - Release
