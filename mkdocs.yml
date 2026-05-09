@@ -63,7 +63,7 @@ plugins:
           build: true
         - locale: de
           name: Deutsch
-          build: true
+          build: false
 
 markdown_extensions:
   - admonition
