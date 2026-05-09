@@ -5,7 +5,7 @@ site_url: https://LegitCirtuitz.github.io/cmdrcli/
 theme:
   name: material
   palette: 
-    - media: "(prefers-color-scheme: light)" # Fixed to light
+    - media: "(prefers-color-scheme: light)"
       scheme: default
       primary: indigo
       accent: indigo
@@ -22,6 +22,7 @@ theme:
   features:
     - navigation.footer
     - navigation.tabs
+    - navigation.tabs.sticky
     - search.suggest
     - search.highlight
 
@@ -40,31 +41,6 @@ plugins:
       post_readtime: true
       post_excerpt: optional
       pathname: blog
-  - i18n:
-      default_language: en
-      languages:
-        - locale: en
-          name: English
-          default: true
-          build: true
-        - locale: zh
-          name: 简体中文
-          build: true
-        - locale: zh-Hant
-          name: 繁體中文
-          build: true
-        - locale: ja
-          name: 日本語
-          build: true
-        - locale: ko
-          name: 한국어
-          build: true
-        - locale: pt
-          name: Português
-          build: true
-        - locale: de
-          name: Deutsch
-          build: false
 
 markdown_extensions:
   - admonition
@@ -75,5 +51,4 @@ nav:
   - Home: index.md
   - Guide:
       - Introduction: main/index.md
-  - Blogs:
-      - Commandr CLI Documentation Launch: blog/posts/2026-05-09-cmdrdocslaunch.md
+  - Blog: blog/index.md
