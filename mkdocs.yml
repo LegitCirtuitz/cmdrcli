@@ -39,6 +39,7 @@ plugins:
   - blog:
       post_readtime: true
       post_excerpt: optional
+      pathname: blog
   - i18n:
       default_language: en
       languages:
@@ -74,3 +75,5 @@ nav:
   - Home: index.md
   - Guide:
       - Introduction: main/index.md
+  - Blogs:
+      - Commandr CLI Documentation Launch: blog/posts/2026-05-09-cmdrdocslaunch.md
