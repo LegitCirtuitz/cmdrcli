@@ -3,6 +3,7 @@ site_name: Commandr CLI
 site_url: https://LegitCirtuitz.github.io/cmdrcli/
 site_author: LegitCirtuitz
 site_description: Documentation for the Commandr CLI and related projects.
+edit_uri: edit/main/docs/
 
 # Repository
 repo_name: LegitCirtuitz/cmdrcli
