@@ -113,4 +113,6 @@ nav:
   - Home: index.md
   - Guide:
       - Introduction: main/index.md
+      - Documentation:
+        - What is Commandr CLI?: main/documentation/cmdrinfo.md
   - Blog: blog/index.md
