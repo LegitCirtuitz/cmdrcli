@@ -116,4 +116,5 @@ nav:
       - Documentation:
           - main/documentation/index.md
           - What is Commandr CLI?: main/documentation/cmdrinfo.md
+          - Night: night.md
   - Blog: blog/index.md
