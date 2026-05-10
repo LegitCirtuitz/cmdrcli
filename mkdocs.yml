@@ -111,7 +111,7 @@ markdown_extensions:
 # Page tree
 nav:
   - Home: index.md
-  - Guide:
+  - Getting Started:
       - Introduction: main/index.md
       - Documentation:
         - What is Commandr CLI?: main/documentation/cmdrinfo.md
