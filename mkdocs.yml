@@ -34,7 +34,6 @@ theme:
     - content.tooltips
     - navigation.footer
     - navigation.indexes    # Allows the "Documentation" folder to be a clickable link
-    - navigation.sections   # Makes "Getting Started" a bold fixed header
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.top
