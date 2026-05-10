@@ -8,7 +8,7 @@ hide:
   <h1 class="hero-title">Commandr CLI</h1>
   <p class="hero-subtitle">The ultimate automation tool for modern developers.</p>
   <div class="hero-buttons">
-    <a href="guide/setup/" class="md-button md-button--primary">Get Started</a>
+    <a href="main/setup/" class="md-button md-button--primary">Get Started</a>
     <a href="https://github.com/LegitCirtuitz/cmdrcli" class="md-button">View on GitHub</a>
   </div>
   
