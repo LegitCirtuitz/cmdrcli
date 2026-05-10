@@ -33,8 +33,8 @@ theme:
     - content.code.copy
     - content.tooltips
     - navigation.footer
-    - navigation.indexes
-    - navigation.sections
+    - navigation.indexes    # Allows the "Documentation" folder to be a clickable link
+    - navigation.sections   # Makes "Getting Started" a bold fixed header
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.top
@@ -114,5 +114,6 @@ nav:
   - Getting Started:
       - Introduction: main/index.md
       - Documentation:
-        - What is Commandr CLI?: main/documentation/cmdrinfo.md
+          - main/documentation/index.md
+          - What is Commandr CLI?: main/documentation/cmdrinfo.md
   - Blog: blog/index.md
