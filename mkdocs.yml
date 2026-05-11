@@ -9,25 +9,14 @@ edit_uri: edit/main/docs/
 repo_name: LegitCirtuitz/cmdrcli
 repo_url: https://github.com/LegitCirtuitz/cmdrcli
 
+# Copyright
+copyright: Copyright &copy; 2016 - 2026 LegitCirtuitz
+
+# Configuration
 theme:
   name: material
   logo: assets/logo.png
   favicon: assets/logo.png
-  palette: 
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      primary: indigo
-      accent: indigo
-      toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      primary: black
-      accent: indigo
-      toggle:
-        icon: material/brightness-4
-        name: Switch to light mode
   features:
     - content.action.edit
     - content.action.view
@@ -35,7 +24,8 @@ theme:
     - content.code.copy
     - content.tooltips
     - navigation.footer
-    - navigation.indexes    # Allows the "Documentation" folder to be a clickable link
+    - navigation.indexes
+    - navigation.sections
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.top
@@ -44,6 +34,28 @@ theme:
     - search.share
     - search.suggest
     - toc.follow
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/link
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch-off
+        name: Switch to system preference
+  font:
+    text: Roboto
+    code: Roboto Mono
 
 # Plugins
 plugins:
@@ -57,6 +69,9 @@ plugins:
 
 # Additional configuration
 extra:
+  status:
+    new: Recently added
+    deprecated: Deprecated
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/LegitCirtuitz
@@ -105,6 +120,10 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
+      combine_header_slug: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
@@ -116,4 +135,5 @@ nav:
       - Introduction: main/index.md
       - Documentation:
           - What is Commandr CLI?: main/documentation/cmdrinfo.md
+          - Contributing Related: main/contributedocs.md
   - Blog: blog/index.md
