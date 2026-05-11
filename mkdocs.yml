@@ -11,6 +11,8 @@ repo_url: https://github.com/LegitCirtuitz/cmdrcli
 
 theme:
   name: material
+  custom_dir: overrides
+  logo: 1.svg
   palette: 
     - media: "(prefers-color-scheme: light)"
       scheme: default
