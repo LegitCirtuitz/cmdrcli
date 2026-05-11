@@ -9,173 +9,195 @@ hide:
     <h1 class="hero-title">Commandr CLI</h1>
     <p class="hero-subtitle">The ultimate automation tool for modern developers.</p>
     <div class="hero-buttons">
-      <a href="main/setup/" class="md-button md-button--primary">Get Started</a>
-      <a href="https://github.com/LegitCirtuitz/cmdrcli" class="md-button">View on GitHub</a>
+      <a href="main/setup/" class="md-button md-button--primary custom-btn">Get Started</a>
+      <a href="https://github.com/LegitCirtuitz/cmdrcli" class="md-button outline-btn">View on GitHub</a>
     </div>
   </div>
   
-  <div class="scroll-arrow" onclick="document.getElementById('anchor').scrollIntoView({behavior: 'smooth'})">
+  <div class="scroll-arrow" onclick="document.getElementById('features-section').scrollIntoView({behavior: 'smooth'})">
     <span class="md-icon">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.41 8.58L12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42Z"/></svg>
     </span>
   </div>
 </div>
 
-<div id="anchor"></div>
+<div id="features-section" class="main-content">
 
-## Why Commandr?
+  <h2 class="section-header">Technical Excellence</h2>
+  
+  <p class="section-text">
+    Commandr CLI is engineered for performance. Built with a zero-dependency mindset in Python, 
+    it provides a robust framework for automating complex local and cloud workflows.
+  </p>
 
-Commandr CLI is built for speed and simplicity. Written in **pure Python** with minimal dependencies, it bridges the gap between complex shell scripts and intuitive user commands.
-
-<div class="grid-container">
-  <div class="feature-card">
-    <h3>Lightning Fast</h3>
-    <p>Zero-bloat architecture ensures commands execute in milliseconds.</p>
+  <div class="grid-container">
+    <div class="feature-card">
+      <h3 class="card-title">High Performance</h3>
+      <p>The core engine is optimized for sub-millisecond execution times and minimal memory footprint.</p>
+    </div>
+    <div class="feature-card">
+      <h3 class="card-title">Pythonic Architecture</h3>
+      <p>Leverage the full power of the Python ecosystem to extend functionality with custom plugins.</p>
+    </div>
+    <div class="feature-card">
+      <h3 class="card-title">DevOps Integrated</h3>
+      <p>Standardized hooks for Git, Docker, and CI/CD pipelines come pre-configured out of the box.</p>
+    </div>
   </div>
-  <div class="feature-card">
-    <h3>Python Powered</h3>
-    <p>Extensible and easy to customize using the language you already love.</p>
-  </div>
-  <div class="feature-card">
-    <h3>Developer First</h3>
-    <p>Built-in automation for git workflows, environment setups, and more.</p>
-  </div>
-</div>
 
----
+  <hr class="section-divider">
 
-## See it in Action
+  <h2 class="section-header">Live Preview</h2>
 
-<div class="terminal-window">
-  <div class="terminal-header">
-    <span class="dot red"></span>
-    <span class="dot yellow"></span>
-    <span class="dot green"></span>
-    <span class="terminal-title">bash — 80x24</span>
+  <div class="terminal-window">
+    <div class="terminal-header">
+      <span class="dot red"></span>
+      <span class="dot yellow"></span>
+      <span class="dot green"></span>
+      <span class="terminal-label">zsh — cmdr</span>
+    </div>
+    <div class="terminal-body">
+      <div class="typewriter-line"><span class="prompt">$</span> cmdr init project-alpha</div>
+      <div class="response">[INFO] Environment configuration successfully generated.</div>
+      <div class="typewriter-line delay-1"><span class="prompt">$</span> cmdr deploy --prod</div>
+      <div class="response delay-1">[SUCCESS] Production deployment sequence complete.</div>
+    </div>
   </div>
-  <div class="terminal-body">
-    <div class="typewriter-line"><span class="prompt">$</span> cmdr init project-alpha</div>
-    <div class="response">[!!] Configuration initialized.</div>
-    <div class="typewriter-line delay-1"><span class="prompt">$</span> cmdr deploy --prod</div>
-    <div class="response delay-1">🚀 Deploying to production... Done!</div>
-  </div>
+
 </div>
 
 <style>
+  /* Fixes for Black Primary Color Theme */
+  :root {
+    --text-bright: #ffffff;
+    --text-dim: #b0b0b0;
+    --accent-blue: #40b1ff;
+  }
+
+  .main-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+
+  /* Typography Fixes */
+  .section-header {
+    font-size: 2.2rem !important;
+    font-weight: 700 !important;
+    text-align: center;
+    margin-top: 4rem !important;
+    color: var(--text-bright) !important;
+    border-bottom: none !important;
+  }
+
+  .section-text {
+    text-align: center;
+    color: var(--text-dim);
+    max-width: 800px;
+    margin: 1.5rem auto 4rem;
+    font-size: 1.1rem;
+  }
+
   /* Hero Section */
   .hero-section {
     position: relative;
-    height: 90vh;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: radial-gradient(circle at center, var(--md-primary-fg-color--transparent) 0%, transparent 70%);
   }
 
   .hero-title {
-    font-size: 4rem !important;
+    font-size: 4.5rem !important;
     font-weight: 900 !important;
+    color: var(--text-bright) !important;
     margin-bottom: 0.5rem !important;
-    background: linear-gradient(45deg, var(--md-primary-fg-color), #40b1ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(255,255,255,0.1);
   }
 
-  .reveal { animation: fadeInUp 1.2s ease-out; }
+  .hero-subtitle {
+    color: var(--text-dim) !important;
+    font-size: 1.5rem;
+  }
 
+  /* Button Fixes */
+  .custom-btn {
+    background-color: var(--text-bright) !important;
+    color: #000 !important;
+    border: none !important;
+  }
+
+  .outline-btn {
+    border: 1px solid #444 !important;
+    color: var(--text-bright) !important;
+  }
+
+  /* Card Fixes */
+  .feature-card {
+    padding: 2.5rem;
+    border-radius: 12px;
+    background: #161616;
+    border: 1px solid #333;
+    transition: all 0.3s ease;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-blue);
+    box-shadow: 0 10px 30px rgba(64, 177, 255, 0.1);
+  }
+
+  .card-title {
+    color: var(--accent-blue) !important;
+    margin-top: 0 !important;
+  }
+
+  /* Terminal */
+  .terminal-window {
+    background: #000;
+    border-radius: 10px;
+    box-shadow: 0 0 40px rgba(0,0,0,0.8), 0 0 2px #333;
+    margin: 4rem 0;
+    overflow: hidden;
+  }
+
+  .terminal-header { background: #1a1a1a; padding: 12px 20px; display: flex; align-items: center; gap: 10px; }
+  .terminal-body { padding: 30px; font-family: monospace; color: #eee; line-height: 1.8; }
+  .prompt { color: var(--accent-blue); }
+  .response { color: #00ff9d; opacity: 0; animation: fadeIn 0.4s forwards 1.5s; }
+  .response.delay-1 { animation-delay: 3.5s; }
+
+  /* Animations */
+  .reveal { animation: fadeInUp 1s ease-out; }
   @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
   }
 
-  /* Grid & Cards */
-  .grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    margin: 40px 0;
-  }
-
-  .feature-card {
-    padding: 1.5rem;
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .feature-card:hover {
-    transform: translateY(-8px);
-    background: rgba(255, 255, 255, 0.1);
-    border-color: var(--md-primary-fg-color);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-  }
-
-  /* Terminal with Typing Animation */
-  .terminal-window {
-    background: #121212;
-    border-radius: 10px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
-    overflow: hidden;
-    margin: 2rem 0;
-    font-family: 'Fira Code', monospace;
-  }
-
-  .terminal-header {
-    background: #252525;
-    padding: 12px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .terminal-title {
-    color: #888;
-    font-size: 12px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .dot { height: 12px; width: 12px; border-radius: 50%; }
-  .red { background: #ff5f56; }
-  .yellow { background: #ffbd2e; }
-  .green { background: #27c93f; }
-
-  .terminal-body { padding: 25px; color: #f8f8f2; line-height: 1.6; }
-  .prompt { color: #bd93f9; margin-right: 10px; }
-  .response { color: #50fa7b; font-weight: bold; margin-bottom: 10px; opacity: 0; animation: fadeIn 0.1s forwards; animation-delay: 1.5s; }
-  .response.delay-1 { animation-delay: 3.5s; }
-
   .typewriter-line {
     overflow: hidden;
     white-space: nowrap;
-    border-right: 2px solid var(--md-primary-fg-color);
     width: 0;
-    animation: typing 1.5s steps(30, end) forwards, blink 0.8s infinite;
+    animation: typing 1.5s steps(40, end) forwards;
   }
-
   .typewriter-line.delay-1 { animation-delay: 2s; }
 
   @keyframes typing { from { width: 0 } to { width: 100% } }
-  @keyframes blink { from, to { border-color: transparent } 50% { border-color: var(--md-primary-fg-color) } }
   @keyframes fadeIn { to { opacity: 1; } }
 
   .scroll-arrow {
     position: absolute;
     bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-    cursor: pointer;
-    color: var(--md-primary-fg-color);
-    animation: bounce 2s infinite;
+    color: var(--text-dim);
+    animation: bounce 2.5s infinite;
   }
 
   @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {transform: translateX(-50%) translateY(0);}
-    40% {transform: translateX(-50%) translateY(-15px);}
-    60% {transform: translateX(-50%) translateY(-7px);}
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-15px); }
   }
+
+  .section-divider { border-top: 1px solid #222; margin: 5rem 0; }
 </style>
