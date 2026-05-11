@@ -12,6 +12,7 @@ repo_url: https://github.com/LegitCirtuitz/cmdrcli
 theme:
   name: material
   logo: assets/logo.png
+  favicon: assets/logo.png
   palette: 
     - media: "(prefers-color-scheme: light)"
       scheme: default
