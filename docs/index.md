@@ -31,15 +31,15 @@ Commandr CLI is built for speed and simplicity. Written in **pure Python** with 
 <!-- Feature Grid -->
 <div class="grid-container">
   <div class="feature-card">
-    <h3>🚀 Lightning Fast</h3>
+    <h3> Lightning Fast</h3>
     <p>Zero-bloat architecture ensures commands execute in milliseconds.</p>
   </div>
   <div class="feature-card">
-    <h3>🐍 Python Powered</h3>
+    <h3> Python Powered</h3>
     <p>Extensible and easy to customize using the language you already love.</p>
   </div>
   <div class="feature-card">
-    <h3>🛠️ Developer First</h3>
+    <h3> Developer First</h3>
     <p>Built-in automation for git workflows, environment setups, and more.</p>
   </div>
 </div>
