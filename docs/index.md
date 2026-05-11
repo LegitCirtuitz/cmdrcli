@@ -24,9 +24,13 @@ hide:
 
 <div id="features" class="content-wrapper">
 
+
+
 ## Why Commandr?
 
 Commandr CLI is built for speed and simplicity. Written in **pure Python** with minimal dependencies, it bridges the gap between complex shell scripts and intuitive user commands.
+
+
 
 <!-- Feature Grid -->
 <div class="grid-container">
@@ -46,7 +50,12 @@ Commandr CLI is built for speed and simplicity. Written in **pure Python** with 
 
 ---
 
+
+
 ## See it in Action
+
+
+
 <div class="terminal-window">
   <div class="terminal-header">
     <span class="dot red"></span>
