@@ -21,12 +21,6 @@ jobs:
         with:
           fetch-depth: 0 # Important for git-revision-date-localized-plugin
 
-      - name: Set up Python runtime
-        uses: actions/setup-python@v5
-        with:
-          python-version: ${{ env.PYTHON_VERSION }}
-          cache: pip # Automatic pip caching
-
       - name: Set up build cache
         uses: actions/cache/restore@v4
         with:
