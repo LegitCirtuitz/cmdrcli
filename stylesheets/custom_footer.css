@@ -1,3 +1,23 @@
+/* --- THEME VARIABLE MAPPING --- */
+
+/* Light Mode Colors (Indigo Accent) */
+[data-md-color-scheme="default"] {
+  --custom-footer-bg: #cbe7f2;       /* Light blue shade */
+  --custom-footer-text: #2c3e50;
+  --custom-footer-heading: #1e293b;
+  --custom-footer-sub-text: #64748b;
+  --custom-footer-divider: rgba(0, 0, 0, 0.08);
+}
+
+/* Dark Mode Colors (Black Primary / Indigo Accent) */
+[data-md-color-scheme="slate"] {
+  --custom-footer-bg: #141414;       /* Deep charcoal/black to match your primary theme */
+  --custom-footer-text: #b3b3b3;     /* Muted gray text for comfortable reading */
+  --custom-footer-heading: #ffffff;  /* Stark white headers */
+  --custom-footer-sub-text: #707070;  /* Subtle grey for list categories */
+  --custom-footer-divider: #242424;  /* Dark subtle break line */
+}
+
 /* Container Background & Text Colors */
 .custom-mega-footer {
   background-color: #cbe7f2 !important; /* The light blue shade */
