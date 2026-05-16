@@ -57,6 +57,10 @@ theme:
     text: Roboto
     code: Roboto Mono
 
+# Style Links
+extra_css:
+  - stylesheets/custom_footer.css
+
 # Plugins
 plugins:
   - blog:
@@ -138,7 +142,7 @@ nav:
           - Contributing Related: main/contributedocs.md
           - License: main/license.md
   - Blog: blog/index.md
-  - Legal: legal/legal.md
+  - Legal:
       - Legal Notice: legal/legal.md
       - Privacy Policy: legal/privacypol.md
       - Terms of Service: legal/tos.md
