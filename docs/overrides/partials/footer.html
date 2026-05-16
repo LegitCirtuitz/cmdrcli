@@ -1,5 +1,5 @@
-{% extends "~~home/runner/.local/lib/python3.12/site-packages/material/templates/partials/footer.html" if false else "material/partials/footer.html" %}
-{% block post_footer %}
+{% extends "base.html" %}
+{% set extracopyright %}
 
 <footer class="md-footer custom-mega-footer">
   <div class="md-footer-meta md-typeset">
@@ -33,4 +33,4 @@
     </div>
   </div>
 </footer>
-{% endblock %}
+{% endset %}
