@@ -1,12 +1,11 @@
 {% block post_footer %}
-
 <footer class="md-footer custom-mega-footer">
   <div class="md-footer-meta md-typeset">
     <div class="footer-grid">
       
       <div class="footer-brand-col">
         <div class="footer-logo">
-          <img src="assets/images/logo.png" alt="Logo" width="40">
+          <img src="docs/assets/logo.png" alt="Logo" width="40">
         </div>
         <h3>Open-source CLI or TUI for Developers and probably nerds</h3>
         <p>I make Open-source CLIs and/or TUIs for people!</p>
@@ -16,8 +15,8 @@
       <div class="footer-links-col">
         <h4>Legal</h4>
         <ul>
-          <li><a href="/privacy/">Privacy Policy</a></li>
-          <li><a href="/terms/">Terms of Service</a></li>
+          <li><a href="{{ config.site_url }}privacy/">Privacy Policy</a></li>
+          <li><a href="{{ config.site_url }}terms/">Terms of Service</a></li>
         </ul>
       </div>
 
