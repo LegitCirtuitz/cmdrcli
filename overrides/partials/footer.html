@@ -47,27 +47,52 @@
 </footer>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
+  function syncFooterNavigation() {
+    // Find the native MkDocs Material navigation elements
     const nativePrev = document.querySelector('.md-footer__link--prev');
     const nativeNext = document.querySelector('.md-footer__link--next');
     
     const customPrev = document.getElementById('custom-prev-link');
     const customNext = document.getElementById('custom-next-link');
 
+    // Sync Previous Button
     if (nativePrev && customPrev) {
       customPrev.href = nativePrev.href;
       const titleText = nativePrev.querySelector('.md-footer__title .md-ellipsis');
-      if (titleText) customPrev.innerHTML = '← ' + titleText.textContent;
+      if (titleText) {
+        customPrev.innerHTML = '← ' + titleText.textContent;
+      }
+      customPrev.style.display = 'inline-block'; // Force render if found
     } else if (customPrev) {
+      // If we are on the homepage, there is no previous page, so hide it gracefully
       customPrev.style.display = 'none';
     }
 
+    // Sync Next Button
     if (nativeNext && customNext) {
       customNext.href = nativeNext.href;
       const titleText = nativeNext.querySelector('.md-footer__title .md-ellipsis');
-      if (titleText) customNext.innerHTML = titleText.textContent + ' →';
+      if (titleText) {
+        customNext.innerHTML = titleText.textContent + ' →';
+      }
+      customNext.style.display = 'inline-block'; // Force render if found
     } else if (customNext) {
+      // If we are on the last page, hide the next button gracefully
       customNext.style.display = 'none';
+    }
+  }
+
+  // Run on initial load
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", syncFooterNavigation);
+  } else {
+    syncFooterNavigation();
+  }
+
+  // Compatibility fix for MkDocs instant loading feature (if enabled)
+  document.addEventListener("DOMNodeInserted", function(e) {
+    if (e.target.id === "____nav" || (e.target.classList && e.target.classList.contains("md-content"))) {
+      syncFooterNavigation();
     }
   });
 </script>
