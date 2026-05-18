@@ -48,51 +48,43 @@
 
 <script>
   function syncFooterNavigation() {
-    // Find the native MkDocs Material navigation elements
-    const nativePrev = document.querySelector('.md-footer__link--prev');
-    const nativeNext = document.querySelector('.md-footer__link--next');
+    // Find the real navigation links inside the theme's native layout
+    const nativePrev = document.querySelector('a.md-footer__link--prev');
+    const nativeNext = document.querySelector('a.md-footer__link--next');
     
     const customPrev = document.getElementById('custom-prev-link');
     const customNext = document.getElementById('custom-next-link');
 
-    // Sync Previous Button
+    // Sync the Previous button data
     if (nativePrev && customPrev) {
-      customPrev.href = nativePrev.href;
+      customPrev.href = nativePrev.getAttribute('href');
       const titleText = nativePrev.querySelector('.md-footer__title .md-ellipsis');
-      if (titleText) {
-        customPrev.innerHTML = '← ' + titleText.textContent;
-      }
-      customPrev.style.display = 'inline-block'; // Force render if found
+      customPrev.innerHTML = '← ' + (titleText ? titleText.textContent : 'Previous');
+      customPrev.style.display = 'inline-block';
     } else if (customPrev) {
-      // If we are on the homepage, there is no previous page, so hide it gracefully
-      customPrev.style.display = 'none';
+      customPrev.style.display = 'none'; // Hide if on the index/homepage
     }
 
-    // Sync Next Button
+    // Sync the Next button data
     if (nativeNext && customNext) {
-      customNext.href = nativeNext.href;
+      customNext.href = nativeNext.getAttribute('href');
       const titleText = nativeNext.querySelector('.md-footer__title .md-ellipsis');
-      if (titleText) {
-        customNext.innerHTML = titleText.textContent + ' →';
-      }
-      customNext.style.display = 'inline-block'; // Force render if found
+      customNext.innerHTML = (titleText ? titleText.textContent : 'Next') + ' →';
+      customNext.style.display = 'inline-block';
     } else if (customNext) {
-      // If we are on the last page, hide the next button gracefully
-      customNext.style.display = 'none';
+      customNext.style.display = 'none'; // Hide if on the absolute last page
     }
   }
 
-  // Run on initial load
+  // Handle normal page loads and instant navigation page switches
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", syncFooterNavigation);
   } else {
     syncFooterNavigation();
   }
-
-  // Compatibility fix for MkDocs instant loading feature (if enabled)
-  document.addEventListener("DOMNodeInserted", function(e) {
-    if (e.target.id === "____nav" || (e.target.classList && e.target.classList.contains("md-content"))) {
-      syncFooterNavigation();
-    }
+  
+  // Dynamic observer fallback for single-page dynamic routing updates
+  window.addEventListener("click", function() {
+    setTimeout(syncFooterNavigation, 100);
   });
 </script>
