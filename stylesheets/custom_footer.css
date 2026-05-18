@@ -1,6 +1,8 @@
-/* --- THEME VARIABLE MAPPING --- */
+/* ==========================================
+   1. THEME COLOR TOKENS (Light/Dark Management)
+   ========================================== */
 
-/* Light Mode Theme Hook */
+/* Light Mode Defaults */
 :root, [data-md-color-scheme="default"] {
   --custom-footer-bg: #cbe7f2;       /* Your light blue shade */
   --custom-footer-text: #2c3e50;
@@ -18,60 +20,80 @@
   --custom-footer-divider: #242424;
 }
 
-
-/* --- FOOTER LAYOUT & STYLES --- */
-
+/* ==========================================
+   2. GLOBAL FOOTER CONTAINER
+   ========================================== */
 .custom-mega-footer {
-  background-color: var(--custom-footer-bg) !important;
-  color: var(--custom-footer-text) !important;
-  padding: 3rem 1.5rem 1.5rem 1.5rem;
-  transition: background-color 0.25s ease, color 0.25s ease;
+  margin-top: 3rem;
+  padding: 2rem 1rem;
+  background-color: var(--custom-footer-bg);
+  border-top: 1px solid var(--custom-footer-divider);
+  transition: background-color 0.25s ease, border-color 0.25s ease;
 }
 
-.custom-mega-footer .md-footer-meta {
-  background-color: transparent !important;
-  max-width: 1200px;
-  margin: 0 auto;
+/* ==========================================
+   3. TOP SECTION: Pagination (Next / Previous)
+   ========================================== */
+.custom-nav-links {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
 }
 
+.nav-btn {
+  font-weight: bold;
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  border: 1px solid var(--custom-footer-divider);
+  background-color: var(--md-default-bg-color); /* Matches theme base */
+  color: var(--custom-footer-text);
+  transition: all 0.2s ease-in-out;
+}
+
+.nav-btn:hover {
+  color: var(--md-accent-fg-color) !important;
+  border-color: var(--md-accent-fg-color) !important;
+}
+
+/* ==========================================
+   4. MIDDLE SECTION: Brand & Legal Info Grid
+   ========================================= */
 .footer-grid {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  gap: 4rem;
+  gap: 2rem;
+  padding: 1.5rem 0;
+  max-width: 61rem;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    padding: 1rem 0;
+  }
 }
 
 .footer-brand-col h3 {
-  font-size: 1.1rem !important;
-  font-weight: 700;
-  margin-top: 1rem;
-  margin-bottom: 0.8rem;
   color: var(--custom-footer-heading);
+  margin-top: 0.5rem;
 }
 
 .footer-brand-col p {
-  font-size: 0.9rem;
-  line-height: 1.6;
-  opacity: 0.8;
-  margin-bottom: 0.5rem;
+  color: var(--custom-footer-text);
 }
 
 .footer-hw {
   font-family: var(--md-code-font-family, monospace);
   font-weight: bold;
-  color: #4f46e5;
-}
-
-.footer-logo img {
-  border-radius: 8px;
+  color: var(--md-accent-fg-color);
 }
 
 .footer-links-col h4 {
-  font-size: 0.85rem !important;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: 1rem;
   color: var(--custom-footer-sub-text);
-  font-weight: 700;
+  margin-bottom: 0.5rem;
 }
 
 .footer-links-col ul {
@@ -81,44 +103,50 @@
 }
 
 .footer-links-col ul li {
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.5rem;
 }
 
 .footer-links-col ul li a {
-  color: var(--custom-footer-text) !important;
   text-decoration: none;
-  font-size: 0.95rem;
+  color: var(--custom-footer-text);
   transition: color 0.2s ease;
 }
 
 .footer-links-col ul li a:hover {
-  color: #4f46e5 !important;
+  color: var(--md-accent-fg-color);
 }
 
-.footer-divider {
-  border: 0;
-  height: 1px;
-  background-color: var(--custom-footer-divider);
-  margin: 2.5rem 0 1.5rem 0;
-}
-
-.footer-bottom {
+/* ==========================================
+   5. BOTTOM SECTION: Copyright & Social Row
+   ========================================== */
+.footer-bottom-row {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
-  font-size: 0.9rem;
+  padding-top: 1.5rem;
+  max-width: 61rem;
+  margin: 0 auto;
+  border-top: 1px solid var(--custom-footer-divider);
 }
 
 .footer-copyright {
-  opacity: 0.7;
+  color: var(--custom-footer-text);
+  opacity: 0.8;
+  font-size: 0.9em;
 }
 
-@media screen and (max-width: 768px) {
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  .footer-bottom {
-    justify-content: flex-start;
-  }
+.custom-social-icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.custom-social-icons a {
+  color: var(--custom-footer-text);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.custom-social-icons a:hover {
+  color: var(--md-accent-fg-color);
+  transform: scale(1.05);
 }
