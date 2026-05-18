@@ -48,43 +48,63 @@
 
 <script>
   function syncFooterNavigation() {
-    // Find the real navigation links inside the theme's native layout
-    const nativePrev = document.querySelector('a.md-footer__link--prev');
-    const nativeNext = document.querySelector('a.md-footer__link--next');
+    console.log("=== Footer Script Started ===");
     
+    // 1. Check if our custom buttons exist in the HTML
     const customPrev = document.getElementById('custom-prev-link');
     const customNext = document.getElementById('custom-next-link');
+    console.log("Custom elements found:", { customPrev: !!customPrev, customNext: !!customNext });
 
-    // Sync the Previous button data
-    if (nativePrev && customPrev) {
-      customPrev.href = nativePrev.getAttribute('href');
-      const titleText = nativePrev.querySelector('.md-footer__title .md-ellipsis');
-      customPrev.innerHTML = '← ' + (titleText ? titleText.textContent : 'Previous');
-      customPrev.style.display = 'inline-block';
-    } else if (customPrev) {
-      customPrev.style.display = 'none'; // Hide if on the index/homepage
+    // 2. Try multiple selector variations to catch MkDocs elements
+    const nativePrev = document.querySelector('a.md-footer__link--prev, .md-footer__nav a[rel="prev"]');
+    const nativeNext = document.querySelector('a.md-footer__link--next, .md-footer__nav a[rel="next"]');
+    console.log("Native elements found:", { nativePrev: !!nativePrev, nativeNext: !!nativeNext });
+
+    // Handle Previous Button
+    if (customPrev) {
+      if (nativePrev) {
+        customPrev.href = nativePrev.getAttribute('href');
+        const titleText = nativePrev.querySelector('.md-footer__title .md-ellipsis, .md-footer__title');
+        customPrev.innerHTML = '← ' + (titleText ? titleText.textContent.trim() : 'Previous');
+        customPrev.style.display = 'inline-block';
+        console.log("Synced Previous Link:", customPrev.href);
+      } else {
+        // FALLBACK: If we can't find the native link, force display it for debugging
+        customPrev.innerHTML = '← Back';
+        customPrev.style.display = 'inline-block';
+        console.log("Previous Link not found in theme layout. Using fallback.");
+      }
     }
 
-    // Sync the Next button data
-    if (nativeNext && customNext) {
-      customNext.href = nativeNext.getAttribute('href');
-      const titleText = nativeNext.querySelector('.md-footer__title .md-ellipsis');
-      customNext.innerHTML = (titleText ? titleText.textContent : 'Next') + ' →';
-      customNext.style.display = 'inline-block';
-    } else if (customNext) {
-      customNext.style.display = 'none'; // Hide if on the absolute last page
+    // Handle Next Button
+    if (customNext) {
+      if (nativeNext) {
+        customNext.href = nativeNext.getAttribute('href');
+        const titleText = nativeNext.querySelector('.md-footer__title .md-ellipsis, .md-footer__title');
+        customNext.innerHTML = (titleText ? titleText.textContent.trim() : 'Next') + ' →';
+        customNext.style.display = 'inline-block';
+        console.log("Synced Next Link:", customNext.href);
+      } else {
+        // FALLBACK: Force display it for debugging
+        customNext.innerHTML = 'Next →';
+        customNext.style.display = 'inline-block';
+        console.log("Next Link not found in theme layout. Using fallback.");
+      }
     }
   }
 
-  // Handle normal page loads and instant navigation page switches
+  // Execution triggers
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", syncFooterNavigation);
   } else {
     syncFooterNavigation();
   }
-  
-  // Dynamic observer fallback for single-page dynamic routing updates
-  window.addEventListener("click", function() {
-    setTimeout(syncFooterNavigation, 100);
+
+  // Watch for instant navigation changes
+  const observer = new MutationObserver(() => {
+    syncFooterNavigation();
   });
+  if (document.body) {
+    observer.observe(document.body, { childList: true, subtree: true });
+  }
 </script>
