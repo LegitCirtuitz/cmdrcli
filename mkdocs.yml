@@ -140,6 +140,7 @@ nav:
           - What is Commandr CLI?: main/documentation/cmdrinfo.md
           - Contributing Related: main/contributedocs.md
           - License: main/license.md
+          - Misc: main/documentation/devnotice.md
   - Blog: blog/index.md
   - Legal:
       - Legal Notice: legal/legal.md
