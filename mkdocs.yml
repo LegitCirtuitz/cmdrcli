@@ -1,13 +1,12 @@
 # yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
-site_name: Commandr CLI
-site_url: https://LegitCirtuitz.github.io/cmdrcli/
+site_name: Learn
+site_url: https://LegitCirtuitz.github.io/learn/
 site_author: LegitCirtuitz
-site_description: Documentation for the Commandr CLI and related projects.
-edit_uri: edit/main/docs/
+site_description: Learn literally anything and everything.
 
 # Repository
-repo_name: LegitCirtuitz/cmdrcli
-repo_url: https://github.com/LegitCirtuitz/cmdrcli
+repo_name: LegitCirtuitz/learn
+repo_url: https://github.com/LegitCirtuitz/learn
 
 # Copyright
 copyright: Copyright &copy; 2026 LegitCirtuitz
@@ -56,11 +55,9 @@ theme:
     text: Roboto
     code: Roboto Mono
 
-# Style Links
 extra_css:
   - stylesheets/custom_footer.css
 
-# Plugins
 plugins:
   - blog:
       post_readtime: true
@@ -70,7 +67,6 @@ plugins:
   - minify:
       minify_html: true
 
-# Additional configuration
 extra:
   status:
     new: Recently added
@@ -83,7 +79,6 @@ extra:
     - icon: fontawesome/brands/youtube
       link: https://youtube.com/@ItsCirtwitz
 
-# Extensions
 markdown_extensions:
   - abbr
   - admonition
@@ -93,6 +88,9 @@ markdown_extensions:
   - md_in_html
   - toc:
       permalink: true
+  # Added Grid support
+  - pymdownx.blocks.caption
+  - pymdownx.blocks.grid
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.betterem:
@@ -131,18 +129,5 @@ markdown_extensions:
       custom_checkbox: true
   - pymdownx.tilde
 
-# Page tree
-nav:
-  - Home: index.md
-  - Getting Started:
-      - Introduction: main/index.md
-      - Documentation:
-          - What is Commandr CLI?: main/documentation/cmdrinfo.md
-          - Contributing Related: main/contributedocs.md
-          - License: main/license.md
-          - Misc: main/documentation/devnotice.md
-  - Blog: blog/index.md
-  - Legal:
-      - Legal Notice: legal/legal.md
-      - Privacy Policy: legal/privacypol.md
-      - Terms of Service: legal/tos.md
+  nav:
+    - Module: index.md
